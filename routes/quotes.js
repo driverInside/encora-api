@@ -37,6 +37,7 @@ router
 
   .post('/', async function (req, res, next) {
     const { quote } = req.body
+
     const newQuote = await client.db().collection('quotes').insertOne(quote)
 
     res.status(201)
